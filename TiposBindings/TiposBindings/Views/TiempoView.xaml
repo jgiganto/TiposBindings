@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sistema="clr-namespace:System;assembly=mscorlib"
+             xmlns:viewmodels="clr-namespace:TiposBindings.ViewModels"
+             x:Class="TiposBindings.Views.TiempoView">
+    <ContentPage.Content>
+        <StackLayout 
+            BindingContext="{x:Static sistema:DateTime.Now}">
+            <Label Text="{Binding HoraSistema,
+                StringFormat='{0:T}'}">
+                <Label.BindingContext>
+                    <viewmodels:RelojViewModel/>
+                </Label.BindingContext>                
+            </Label>
+            
+            <Label Text="{Binding Year,StringFormat='Estamos en el año {0}'}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding StringFormat='El mes es {0:MMMM}'}"
+                   VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

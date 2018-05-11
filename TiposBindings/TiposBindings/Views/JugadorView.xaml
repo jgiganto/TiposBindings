@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:modelos="clr-namespace:TiposBindings.Models"
+             x:Class="TiposBindings.Views.JugadorView">
+    <ContentPage.BindingContext>
+        <modelos:Jugador Nombre="Guti"
+                         Equipo="Real Madrid"
+                         Imagen=""
+                         Descripcion="El mejor"/>
+
+    </ContentPage.BindingContext>    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Nombre}"
+                   FontSize="40" TextColor="BlueViolet"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Start"/>
+            <Label Text="{Binding Equipo}"
+                   FontSize="35" TextColor="Red"
+                   HorizontalOptions="CenterAndExpand"/>
+            <Image Source="{Binding Imagen}"/>
+            <Label Text="{Binding Descripcion}"
+                   FontSize="20"/>
+           
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:conversores="clr-namespace:TiposBindings.Converters"
+             x:Class="TiposBindings.Views.GradosView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conversores:ConvertidorGrados
+                x:Key="conversorgrados"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Grados celsius"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="txtcelsius"
+                VerticalOptions="Start" 
+                Placeholder="celsius" />
+            <Label Text="Grados Farenhait"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry BindingContext="{x:Reference Name=txtcelsius}"
+                   Text="{Binding Path=Text,
+                Converter={StaticResource conversorgrados}
+                ,Mode=OneWay}"
+                   Placeholder="Farenhait"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+
+
+ 

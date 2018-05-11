@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:modelos="clr-namespace:TiposBindings.Models"
+             xmlns:conversores="clr-namespace:TiposBindings.Converters"
+             x:Class="TiposBindings.Views.ProductosView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conversores:ConvertidorMoneda
+                x:Key="conversormonedas"/>
+        </ResourceDictionary>        
+    </ContentPage.Resources>    
+    
+    
+    <ContentPage.Content>        
+        <StackLayout>
+            <Label Text="{Binding Nombre}"
+                FontSize="40" TextColor="BlueViolet"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Start" />
+            <Image Source="{Binding Imagen}"/>
+            <Label Text="Euros"/>
+            <Entry Text="{Binding Precio}" x:Name="txteuros"/>
+            <Label Text="Dolares"/>
+            <Entry BindingContext="{x:Reference Name=txteuros}"
+                   Text="{Binding Path=Text,
+                Converter={StaticResource conversormonedas}
+                ,Mode=OneWay}"
+                   />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

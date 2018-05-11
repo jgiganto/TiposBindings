@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiposBindings.Views.BindingRecursosXaml">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="textostarwars">
+                It is a period of civil war.
+Rebel spaceships, striking
+from a hidden base, have won
+their first victory against
+the evil Galactic Empire. 
+During the battle, Rebel</x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="fondostarwars.jpg" VerticalOptions="Fill" Aspect="AspectFill" HorizontalOptions="Fill"/>
+            <ScrollView Orientation="Vertical" RotationX="24" Padding="16.800">
+                <Label Text="{StaticResource textostarwars}" TextColor="Yellow" FontAttributes="Bold" HorizontalOptions="Fill" FontSize="20"/>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

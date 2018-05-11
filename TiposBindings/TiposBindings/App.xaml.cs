@@ -13,7 +13,7 @@ namespace TiposBindings
 		{
 			InitializeComponent();
 
-			MainPage = new TiposBindings.MainPage();
+			MainPage = new TiposBindings.Views.TiempoView();
 		}
 
 		protected override void OnStart ()

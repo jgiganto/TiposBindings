@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiposBindings.Views.BindingObjetos">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Enlace a controles XAML"
+                   FontSize="Large"
+                   HorizontalOptions="CenterAndExpand"/>
+            <Entry x:Name="txtdatos"
+                   Placeholder="Introduzca texto"
+                   VerticalOptions="Start"
+                   HorizontalOptions="FillAndExpand"/>
+            <Label FontSize="40"
+                   BindingContext="{x:Reference Name=txtdatos}"
+                   Text="{Binding Path=Text}"
+                   />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
